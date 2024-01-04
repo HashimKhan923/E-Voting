@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('voter_id')->unsigned()->nullable();
+            $table->foreign('voter_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('party_id')->unsigned()->nullable();
+            $table->foreign('party_id')->references('id')->on('parties')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

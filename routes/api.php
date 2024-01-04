@@ -40,8 +40,12 @@ Route::group(['prefix' => '/voter'], function() {
 
 Route::group(['middleware' => ['auth:api']], function(){
 
-    
 
+    Route::group(['prefix' => '/voter'], function() {
+    Route::controller(App\Http\Controllers\Voter\VoteController::class)->group(function () {
+        Route::post('vote','create');
+    });
+    });
 
     ///////////////// Admin Routes \\\\\\\\\\\\\\\\\\\
 

@@ -19,8 +19,14 @@ class PartyController extends Controller
     {
         $new = new Party();
         $new->name = $request->name;
-        $new->flag = $request->flag;
         $new->candidate_name = $request->candidate_name;
+        if($request->file('flag'))
+        {
+            $file= $request->flag;
+            $filename= date('YmdHis').$file->getClientOriginalName();
+            $file->move(public_path('Flag'),$filename);
+            $new->flag = $filename;
+        }
         if($request->file('image'))
         {
             $file= $request->image;
@@ -56,6 +62,18 @@ class PartyController extends Controller
         $update->name = $request->name;
         $update->flag = $request->flag;
         $update->candidate_name = $request->candidate_name;
+        if($request->file('flag'))
+        {
+            if($update->flag)
+            {
+                unlink(public_path('Flag/'.$update->flag));
+            }
+
+            $file= $request->flag;
+            $filename= date('YmdHis').$file->getClientOriginalName();
+            $file->move(public_path('Flag'),$filename);
+            $update->flag = $filename;
+        }
         if($request->file('image'))
         {
             if($update->candidate_image)
