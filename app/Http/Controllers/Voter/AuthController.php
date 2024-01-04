@@ -40,25 +40,25 @@ class AuthController extends Controller
         $new->pakistan_city = $request->pakistan_city;
         $new->profession = $request->profession;
         $new->date_of_birth = $request->date_of_birth;
-        // $token = uniqid();
-        // $new->remember_token = $token;
+        $token = uniqid();
+        $new->remember_token = $token;
         $new->password = Hash::make($request->password);
         // $new->is_active = 1;
         $new->save();
 
-        // Mail::send(
-        //     'email.customer_verification',
-        //     [
-        //         'token'=>$token,
-        //         'name'=>$new->name,
-        //         //'last_name'=>$query->last_name
-        //     ], 
+        Mail::send(
+            'email.verification',
+            [
+                'token'=>$token,
+                'name'=>$new->name,
+                //'last_name'=>$query->last_name
+            ], 
         
-        // function ($message) use ($new) {
-        //     $message->from('support@dragonautomart.com','Dragon Auto Mart');
-        //     $message->to($new->email);
-        //     $message->subject('Email Verification');
-        // });
+        function ($message) use ($new) {
+            $message->from('support@dragonautomart.com','E-Voting');
+            $message->to($new->email);
+            $message->subject('Email Verification');
+        });
         
 
         $response = ['status'=>true,"message" => "we have send the verification email to your gmail please verify your account"];
@@ -79,10 +79,10 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
         if ($user) {
 
-        // if($user->remember_token == null)
-        // {   
-        //     if($user->is_active == 1)
-        //     {
+        if($user->remember_token == null)
+        {   
+            if($user->is_active == 1)
+            {
                 if (Hash::check($request->password, $user->password)) {
     
                         $token = $user->createToken('Laravel Password Grant Client')->accessToken;
@@ -95,20 +95,20 @@ class AuthController extends Controller
                     return response($response, 422);
                 }
     
-        //     }
-        //     else
-        //     {
-        //         $response = ['status'=>false,"message" =>'Your Account has been Blocked by Admin!'];
-        //         return response($response, 422);
-        //     }
-        // } 
-        // else
-        // {
+            }
+            else
+            {
+                $response = ['status'=>false,"message" =>'Your Account has been Blocked by Admin!'];
+                return response($response, 422);
+            }
+        } 
+        else
+        {
 
 
-        //     $response = ['status'=>false,"message" =>'your email is not verified. we have sent a verification link to your email while registration!'];
-        //     return response($response, 422);
-        // }  
+            $response = ['status'=>false,"message" =>'your email is not verified. we have sent a verification link to your email while registration!'];
+            return response($response, 422);
+        }  
 
 
         } else {
