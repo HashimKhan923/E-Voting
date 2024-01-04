@@ -35,6 +35,12 @@ Route::group(['prefix' => '/voter'], function() {
     });
 });
 
+Route::group(['prefix' => '/admin'], function() {
+    Route::controller(App\Http\Controllers\Admin\AuthController::class)->group(function () {
+        Route::post('login','login');
+    });
+});
+
 
 
 
