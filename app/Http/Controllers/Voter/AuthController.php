@@ -39,6 +39,7 @@ class AuthController extends Controller
         $new->pakistan_province = $request->pakistan_province;
         $new->pakistan_city = $request->pakistan_city;
         $new->profession = $request->profession;
+        $new->date_of_birth = $request->date_of_birth;
         // $token = uniqid();
         // $new->remember_token = $token;
         $new->password = Hash::make($request->password);
