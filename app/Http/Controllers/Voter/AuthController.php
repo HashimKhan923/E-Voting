@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         
         $new = new User();
-        $new->uu_id = $request->uu_id-'000'.$last->id;
+        $new->uu_id = $request->uu_id.'-000'.$last->id;
         $new->name = $request->name;
         $new->email = $request->email;
         $new->city = $request->city;
