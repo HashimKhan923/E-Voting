@@ -25,14 +25,17 @@ class AuthController extends Controller
 
         
         $new = new User();
-        $new->uu_id = $request->uu_id-'00'.$last->id;
+        $new->uu_id = $request->uu_id-'000'.$last->id;
         $new->name = $request->name;
         $new->email = $request->email;
         $new->city = $request->city;
+        $new->state = $request->state;
         $new->country = $request->country;
         $new->phone = $request->phone;
         $new->gender = $request->gender;
         $new->is_pakistani = $request->is_pakistani;
+        $new->pakistan_province = $request->pakistan_province;
+        $new->pakistan_city = $request->pakistan_city;
         $new->profession = $request->profession;
         // $token = uniqid();
         // $new->remember_token = $token;

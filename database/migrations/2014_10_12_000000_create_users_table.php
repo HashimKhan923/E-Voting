@@ -19,11 +19,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique()->nullable();
             $table->string('country')->nullable();
+            $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('date_of_birth')->nullable();
             $table->string('gender')->nullable();
             $table->boolean('is_pakistani')->default(1);
+            $table->string('pokistan_province')->nullable();
+            $table->string('pakistan_city')->nullable();
             $table->string('profession')->nullable();
+            $table->boolean('is_active')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
