@@ -40,8 +40,26 @@ Route::group(['prefix' => '/voter'], function() {
 
 Route::group(['middleware' => ['auth:api']], function(){
 
+    
+
+
+    ///////////////// Admin Routes \\\\\\\\\\\\\\\\\\\
+
+
+            
+
     Route::middleware(['admin'])->group(function () {
 
+                        // Party
+
+        Route::group(['prefix' => '/admin/party'], function() {
+            Route::controller(App\Http\Controllers\Admin\PartyController::class)->group(function () {
+                Route::get('show','index');
+                Route::post('create','create');
+                Route::post('update','update');
+                Route::get('delete/{id}','delete');
+            });
+        });
 
     });
 });   

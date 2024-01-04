@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Voter;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Validator;
 use Mail;
 
 class AuthController extends Controller

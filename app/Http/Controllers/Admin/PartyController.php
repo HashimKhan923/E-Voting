@@ -21,7 +21,13 @@ class PartyController extends Controller
         $new->name = $request->name;
         $new->flag = $request->flag;
         $new->candidate_name = $request->candidate_name;
-        $new->candidate_image = $request->candidate_image;
+        if($request->file('image'))
+        {
+            $file= $request->image;
+            $filename= date('YmdHis').$file->getClientOriginalName();
+            $file->move(public_path('Candidate'),$filename);
+            $new->candidate_image = $filename;
+        }
         if($request->file('audio'))
         {
             $file= $request->audio;
@@ -50,8 +56,21 @@ class PartyController extends Controller
         $update->name = $request->name;
         $update->flag = $request->flag;
         $update->candidate_name = $request->candidate_name;
-        $update->candidate_image = $request->candidate_image;
-        if($request->file('audio'))
+        if($request->file('image'))
+        {
+            if($update->candidate_image)
+            {
+                unlink(public_path('Candidate/'.$update->candidate_image));
+            }
+
+            $file= $request->image;
+            $filename= date('YmdHis').$file->getClientOriginalName();
+            $file->move(public_path('Candidate'),$filename);
+            $update->candidate_image = $filename;
+
+        }   
+
+         if($request->file('audio'))
         {
             if($update->audio)
             {
