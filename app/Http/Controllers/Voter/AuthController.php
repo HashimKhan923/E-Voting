@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         
         $new = new User();
-        $new->uu_id = $request->uu_id.'-'.rand(5,10);
+        $new->uu_id = $request->uu_id.'-'.rand(100000,999999);
         $new->name = $request->name;
         $new->email = $request->email;
         $new->city = $request->city;
