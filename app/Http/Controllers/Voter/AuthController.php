@@ -22,12 +22,11 @@ class AuthController extends Controller
             return response(['errors'=>$validator->errors()->all()], 422);
         }
 
-        $last = User::latest();
 
 
         
         $new = new User();
-        $new->uu_id = $request->uu_id.'-000'.$last->id;
+        $new->uu_id = $request->uu_id.'-'.rand(10);
         $new->name = $request->name;
         $new->email = $request->email;
         $new->city = $request->city;
