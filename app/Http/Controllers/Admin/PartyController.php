@@ -157,15 +157,18 @@ class PartyController extends Controller
     {
         $status = Party::find($id);
 
-        if($update->flag)
+        if($status->is_active == 1)
         {
-            unlink(public_path('Flag/'.$update->flag));
+            $status->is_active = 0;
+        }
+        else
+        {
+            $status->is_active = 0;
         }
 
-        if($update->candidate_image)
-        {
-            unlink(public_path('Candidate/'.$update->candidate_image));
-        }
+        $status->save();
+
+        return response()->json(['message'=>'status changed successfully!',200]);
 
     }
 
