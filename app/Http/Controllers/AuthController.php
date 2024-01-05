@@ -34,7 +34,7 @@ class AuthController extends Controller
                 ], 
             
             function ($message) use ($query) {
-                $message->from('support@dragonautomart.com','E-Voting');
+                $message->from('overseaspkc@gmail.com','E-Voting');
                 $message->to($query->email);
                 $message->subject('Forget Password');
             });
