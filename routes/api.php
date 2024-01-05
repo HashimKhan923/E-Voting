@@ -75,7 +75,7 @@ Route::group(['middleware' => ['auth:api']], function(){
 
         Route::group(['prefix' => '/admin/dashboard'], function() {
             Route::controller(App\Http\Controllers\Admin\DashboardController::class)->group(function () {
-                Route::get('show','index');
+                Route::get('','index');
             });
         });
 
