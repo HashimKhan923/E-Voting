@@ -25,6 +25,12 @@ Route::post('/resetPassword', '\App\Http\Controllers\AuthController@reset_passwo
 Route::get('/verification/{id}', '\App\Http\Controllers\AuthController@verification');
 
 
+Route::group(['prefix' => '/admin'], function() {
+    Route::controller(App\Http\Controllers\Admin\AuthController::class)->group(function () {
+        Route::post('login','login');
+    });
+});
+
             //// Voter Routes \\\\
 
 
@@ -35,11 +41,14 @@ Route::group(['prefix' => '/voter'], function() {
     });
 });
 
-Route::group(['prefix' => '/admin'], function() {
-    Route::controller(App\Http\Controllers\Admin\AuthController::class)->group(function () {
-        Route::post('login','login');
+
+Route::group(['prefix' => '/home'], function() {
+    Route::controller(App\Http\Controllers\Voter\HomeController::class)->group(function () {
+        Route::get('','index');
     });
 });
+
+
 
 
 
