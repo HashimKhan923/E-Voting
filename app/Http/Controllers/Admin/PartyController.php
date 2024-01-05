@@ -64,10 +64,10 @@ class PartyController extends Controller
         $update->candidate_name = $request->candidate_name;
         if($request->file('flag'))
         {
-            // if($update->flag)
-            // {
-            //     unlink(public_path('Flag/'.$update->flag));
-            // }
+            if($update->flag)
+            {
+                unlink(public_path('Flag/'.$update->flag));
+            }
 
             $file= $request->flag;
             $filename= date('YmdHis').$file->getClientOriginalName();
