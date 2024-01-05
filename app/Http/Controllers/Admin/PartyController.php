@@ -145,6 +145,8 @@ class PartyController extends Controller
             unlink(public_path('Video/'.$data->video));
         }
 
+        $data->delete();
+
     }
 
 
