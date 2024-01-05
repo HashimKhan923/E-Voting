@@ -163,7 +163,7 @@ class PartyController extends Controller
         }
         else
         {
-            $status->is_active = 0;
+            $status->is_active = 1;
         }
 
         $status->save();
