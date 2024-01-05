@@ -147,6 +147,8 @@ class PartyController extends Controller
 
         $data->delete();
 
+        return response()->json(['message'=>'deleted successfully!']);
+
     }
 
 
