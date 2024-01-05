@@ -69,6 +69,17 @@ Route::group(['middleware' => ['auth:api']], function(){
 
     Route::middleware(['admin'])->group(function () {
 
+
+
+
+                                // Vote
+
+        Route::group(['prefix' => '/admin/vote'], function() {
+            Route::controller(App\Http\Controllers\Admin\VoteController::class)->group(function () {
+                Route::get('show','index');
+            });
+        });
+
                         // Party
 
         Route::group(['prefix' => '/admin/party'], function() {
