@@ -123,7 +123,18 @@ class PartyController extends Controller
 
     public function delete($id)
     {
-        $data = Party::find();
+        $data = Party::find($id);
+
+        if($update->flag)
+        {
+            unlink(public_path('Flag/'.$update->flag));
+        }
+
+        if($update->candidate_image)
+        {
+            unlink(public_path('Candidate/'.$update->candidate_image));
+        }
+
     }
 
 
