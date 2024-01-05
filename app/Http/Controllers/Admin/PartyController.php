@@ -125,6 +125,34 @@ class PartyController extends Controller
     {
         $data = Party::find($id);
 
+        if($data->flag)
+        {
+            unlink(public_path('Flag/'.$data->flag));
+        }
+
+        if($data->candidate_image)
+        {
+            unlink(public_path('Candidate/'.$data->candidate_image));
+        }
+
+        if($data->audio)
+        {
+            unlink(public_path('Audio/'.$data->audio));
+        }
+
+        if($data->video)
+        {
+            unlink(public_path('Video/'.$data->video));
+        }
+
+    }
+
+
+
+    public function status($id)
+    {
+        $status = Party::find($id);
+
         if($update->flag)
         {
             unlink(public_path('Flag/'.$update->flag));
