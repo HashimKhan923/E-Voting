@@ -104,5 +104,17 @@ Route::group(['middleware' => ['auth:api']], function(){
             });
         });
 
+
+
+                                // Banner
+
+        Route::group(['prefix' => '/admin/banner'], function() {
+            Route::controller(App\Http\Controllers\Admin\BannerController::class)->group(function () {
+                Route::get('show','index');
+                Route::post('create','create');
+                Route::get('delete/{id}','delete');
+            });
+        });
+
     });
 });   

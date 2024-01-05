@@ -10,8 +10,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $data = Party::where('is_active',1)->get();
+        $Parties = Party::where('is_active',1)->get();
+        $Banners = Banner::all();
 
-        return response()->json(['data'=>$data]);
+        return response()->json(['Parties'=>$Parties,'Banners'=>$Banners]);
     }
 }
