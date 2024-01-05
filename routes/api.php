@@ -81,5 +81,17 @@ Route::group(['middleware' => ['auth:api']], function(){
             });
         });
 
+
+
+                                // Voters
+
+        Route::group(['prefix' => '/admin/voter'], function() {
+            Route::controller(App\Http\Controllers\Admin\VoterController::class)->group(function () {
+                Route::get('show','index');
+                Route::get('delete/{id}','delete');
+                Route::get('status/{id}','status');
+            });
+        });
+
     });
 });   
