@@ -44,8 +44,8 @@ class User extends Authenticatable
     ];
 
 
-    public function party()
+    public function vote()
     {
-        return $this->hasOne(Party::class);
+        return $this->hasOne(Vote::class,'voter_id');
     }
 }
