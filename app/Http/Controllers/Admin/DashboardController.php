@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\User;
-use App\Model\Party;
-use App\Model\Vote;
+use App\Models\User;
+use App\Models\Party;
+use App\Models\Vote;
 
 class DashboardController extends Controller
 {
