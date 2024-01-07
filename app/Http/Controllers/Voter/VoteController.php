@@ -22,6 +22,22 @@ class VoteController extends Controller
         $new->party_id = $request->party_id;
         $new->save();
 
+        $user = User::where('id',$request->voter_id)->first();
+
+        Mail::send(
+            'email.vote',
+            [
+                
+                'name'=>$user->name,
+                //'last_name'=>$query->last_name
+            ], 
+        
+        function ($message) use ($user) {
+            $message->from('overseaspkc@gmail.com','E-Voting');
+            $message->to($user->email);
+            $message->subject('Vote');
+        });
+
         return response()->json(['message'=>'vote casted successfully!']);
 
     }

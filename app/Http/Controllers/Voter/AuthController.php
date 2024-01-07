@@ -51,6 +51,7 @@ class AuthController extends Controller
             [
                 'token'=>$token,
                 'name'=>$new->name,
+                'ballet_number'=>$new->uu_id,
                 //'last_name'=>$query->last_name
             ], 
         

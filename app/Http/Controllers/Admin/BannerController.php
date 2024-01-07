@@ -27,6 +27,7 @@ class BannerController extends Controller
             $file->move(public_path('Banner'),$filename);
             $new->image = $filename;
         }
+        $new->link = $request->link;
         $new->save();
 
         return response()->json(['message'=>'created successfully!']);

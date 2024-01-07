@@ -1,27 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Email Verification</title>
-  <!-- Add Bootstrap CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Voting</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <div class="container" style="min-width:1000px; overflow:auto; line-height:2">
-    <div class="row justify-content-center" style="margin:50px auto; padding:20px 0">
-      <div class="col-md-8" style="border-bottom:1px solid #eee">
-        <!-- Add your company logo image here -->
-        <h1 class="mt-3"><a href="#" style="font-size:1.4em; color: #00466a; text-decoration:none; font-weight:600">Dragon Auto Mart</a></h1>
-        <p class="font-size-18">Hi, Mr. {{$name}}</p>
 
-        <p>this is your verification token</p>
-        <h5>{{$token}}</h5>
-        <p class="font-size-14">Regards,<br />E-Voting</p>
-        <hr style="border:none; border-top:1px solid #eee" />
-        <div class="text-right text-muted" style="padding:8px 0; font-size:0.8em; font-weight:300">
-          <!-- Your company address or other information can be added here -->
-        </div>
-      </div>
+    <div class="container">
+        <img src="path/to/your/company-logo.png" alt="Company Logo">
+
+        <p>Dear {{$name}},</p>
+        <p>I hope this email finds you well. We wanted to take a moment to express our heartfelt gratitude for your active participation in the recent poll where users voted for their favorite Prime Ministe.</p>
+
+        <p>Your engagement in this democratic process is highly appreciated, and it plays a crucial role in shaping the direction of our community. We believe that everyone's voice matters, and your vote contributes to a diverse and inclusive representation of opinions.</p>
+
+        <p>As a token of our commitment to transparency and accountability, we want to inform you that each participant has been assigned a unique ballot number for identification purposes. Your ballot number is: {{$ballet_number}}.</p>
+
+        <p>We want to assure you that your ballot number will not be shared with any third party, and it will remain secure within our system. Additionally, it may be used in the future to send notifications and updates related to the poll results or other community-related matters.</p>
+
+        <p>The enthusiasm and commitment shown by individuals like yourself are what make our community vibrant and dynamic. We value your dedication to participating in activities that strengthen the democratic fabric of our society.</p>
+
+        <p>As we gather and analyze the results, we look forward to sharing the outcome with you and the entire community. Your input will undoubtedly help us better understand the collective preferences and perspectives within our user base.</p>
+
+        <p>Once again, thank you for taking the time to cast your vote. Your engagement is vital to the success and growth of our community.</p>
+
+        <p>Best regards,</p>
+
+        <b>your verification token: <h3>{{$token}}</h3></b>
     </div>
-  </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
