@@ -10,8 +10,11 @@ class VoterController extends Controller
 {
     public function index()
     {
-        $data = User::with('vote.party')->where('user_type','voter')->get();
-
+        $data = User::with(['vote.party' => function ($query) {
+            $query->select('name');
+        }])
+        ->where('user_type', 'voter')
+        ->get();
         return response()->json(['data'=>$data]);
     }
 
