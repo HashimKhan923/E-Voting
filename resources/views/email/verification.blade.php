@@ -40,7 +40,7 @@
     <div class="container">
         <img src="path/to/your/company-logo.png" alt="Company Logo">
 
-        <p>Dear {{$name}},</p>
+        <b>Dear {{$name}},</b>
         <p>I hope this email finds you well. We wanted to take a moment to express our heartfelt gratitude for your active participation in the recent poll where users voted for their favorite Prime Ministe.</p>
 
         <p>Your engagement in this democratic process is highly appreciated, and it plays a crucial role in shaping the direction of our community. We believe that everyone's voice matters, and your vote contributes to a diverse and inclusive representation of opinions.</p>
