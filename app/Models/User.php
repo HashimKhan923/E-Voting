@@ -46,6 +46,6 @@ class User extends Authenticatable
 
     public function party()
     {
-        return $this->hasOne(Party::class,'party_id');
+        return $this->hasOne(Party::class);
     }
 }
