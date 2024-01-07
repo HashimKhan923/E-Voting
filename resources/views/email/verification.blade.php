@@ -30,6 +30,17 @@
             margin-bottom: 20px;
         }
 
+        .otp-box {
+            background: #00466a;
+            margin: 0 auto;
+            width: max-content;
+            padding: 0 10px;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
         h1, p {
             text-align: center;
         }
@@ -57,7 +68,7 @@
 
         <p>Best regards,</p>
 
-        <b>your verification token: <h3>{{$token}}</h3></b>
+        <b>your verification token: <h2 class="otp-box">{{ $token }}</h2></b>
     </div>
 
     <!-- Bootstrap JS and Popper.js -->

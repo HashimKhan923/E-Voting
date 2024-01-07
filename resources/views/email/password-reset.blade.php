@@ -58,7 +58,7 @@
     <div class="container">
         <div class="header mb-5">
             <!-- Add your company logo here -->
-            <a href="#" style="font-size: 1.4em; color: #00466a; text-decoration: none; font-weight: 600">Dragon Auto Mart</a>
+            <a href="#" style="font-size: 1.4em; color: #00466a; text-decoration: none; font-weight: 600">E-Voting</a>
         </div>
         <p class="greeting">Hi, Mr. {{$name}}</p>
         <p>Use the following OTP to complete your Reset Password procedures:</p>
