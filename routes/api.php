@@ -49,6 +49,15 @@ Route::group(['prefix' => '/home'], function() {
 });
 
 
+                                // Youtube
+
+    Route::group(['prefix' => '/voter/gallery'], function() {
+        Route::controller(App\Http\Controllers\Voter\YoutubeGalleryController::class)->group(function () {
+            Route::get('show','index');
+        });
+    });
+
+
 
 
 
@@ -118,6 +127,18 @@ Route::group(['middleware' => ['auth:api']], function(){
 
         Route::group(['prefix' => '/admin/banner'], function() {
             Route::controller(App\Http\Controllers\Admin\BannerController::class)->group(function () {
+                Route::get('show','index');
+                Route::post('create','create');
+                Route::get('delete/{id}','delete');
+            });
+        });
+
+
+
+                                // Youtube
+
+        Route::group(['prefix' => '/admin/gallery'], function() {
+            Route::controller(App\Http\Controllers\Admin\YoutubeGalleryController::class)->group(function () {
                 Route::get('show','index');
                 Route::post('create','create');
                 Route::get('delete/{id}','delete');
