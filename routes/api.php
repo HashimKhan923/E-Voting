@@ -145,5 +145,15 @@ Route::group(['middleware' => ['auth:api']], function(){
             });
         });
 
+                                        // HomeYoutube
+
+        Route::group(['prefix' => '/admin/home_gallery'], function() {
+            Route::controller(App\Http\Controllers\Admin\HomeYoutubeGalleryController::class)->group(function () {
+                Route::get('show','index');
+                Route::post('create','create');
+                Route::get('delete/{id}','delete');
+            });
+        });
+
     });
 });   
