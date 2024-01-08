@@ -10,7 +10,7 @@ class PartyController extends Controller
 {
     public function index()
     {
-       $data = Party::with('votes')->get();
+       $data = Party::with('votes')->orderBy('sort','ASC')->get();
 
        return response()->json(['data'=>$data]);
     }

@@ -10,7 +10,7 @@ class BannerController extends Controller
 {
     public function index()
     {
-        $data = Banner::all();
+        $data = Banner::orderBy('sort','ASC')->get();
 
         return response()->json(['data'=>$data]);
     }
