@@ -42,7 +42,7 @@ class BannerController extends Controller
 
         $update = Banner::where('id',$request->id)->first();
 
-        if($request->order != null)
+        if($request->sort != null)
         {
             $changeOrder = Banner::where('sort',$request->sort)->first();
             $changeOrder->sort = $update->sort;

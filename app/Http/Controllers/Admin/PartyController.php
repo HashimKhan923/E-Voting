@@ -66,7 +66,7 @@ class PartyController extends Controller
         $update = Party::where('id',$request->id)->first();
 
 
-        if($request->order != null)
+        if($request->sort != null)
         {
             $changeOrder = Party::where('sort',$request->sort)->first();
             $changeOrder->sort = $update->sort;

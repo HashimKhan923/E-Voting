@@ -57,7 +57,16 @@ Route::group(['prefix' => '/home'], function() {
         });
     });
 
+                                // Banner
 
+                                Route::group(['prefix' => '/admin/banner'], function() {
+                                    Route::controller(App\Http\Controllers\Admin\BannerController::class)->group(function () {
+                                        Route::get('show','index');
+                                        Route::post('create','create');
+                                        Route::post('update','update');
+                                        Route::get('delete/{id}','delete');
+                                    });
+                                });
 
 
 
@@ -123,16 +132,7 @@ Route::group(['middleware' => ['auth:api']], function(){
 
 
 
-                                // Banner
 
-        Route::group(['prefix' => '/admin/banner'], function() {
-            Route::controller(App\Http\Controllers\Admin\BannerController::class)->group(function () {
-                Route::get('show','index');
-                Route::post('create','create');
-                Route::post('update','update');
-                Route::get('delete/{id}','delete');
-            });
-        });
 
 
 
