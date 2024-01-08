@@ -38,12 +38,26 @@
 <body>
 
     <div class="container">
-        <img src="path/to/your/company-logo.png" alt="Company Logo">
+        <!-- <img src="path/to/your/company-logo.png" alt="Company Logo"> -->
         <h1>Thank You for Voting!</h1>
-        <p>Dear {{$name}},</p>
-        <p>We appreciate your active participation in the voting process. Your vote is valuable in shaping the future.</p>
-        <p>Thank you for being a responsible citizen and exercising your democratic right.</p>
-        <p>Best regards,<br>E-Voting</p>
+
+        <b>Dear {{$name}},</b>
+
+        <p>I hope this email finds you well. We wanted to take a moment to express our heartfelt gratitude for your active participation in the recent poll where users voted for their favorite Prime Ministe.</p>
+
+        <p>Your engagement in this democratic process is highly appreciated, and it plays a crucial role in shaping the direction of our community. We believe that everyone's voice matters, and your vote contributes to a diverse and inclusive representation of opinions.</p>
+
+        <p>As a token of our commitment to transparency and accountability, we want to inform you that each participant has been assigned a unique ballot number for identification purposes. Your ballot number is <h2 class="otp-box">{{ $ballet_number }}</h2>.</p>
+
+        <p>We want to assure you that your ballot number will not be shared with any third party, and it will remain secure within our system. Additionally, it may be used in the future to send notifications and updates related to the poll results or other community-related matters.</p>
+
+        <p>The enthusiasm and commitment shown by individuals like yourself are what make our community vibrant and dynamic. We value your dedication to participating in activities that strengthen the democratic fabric of our society.</p>
+
+        <p>As we gather and analyze the results, we look forward to sharing the outcome with you and the entire community. Your input will undoubtedly help us better understand the collective preferences and perspectives within our user base.</p>
+
+        <p>Once again, thank you for taking the time to cast your vote. Your engagement is vital to the success and growth of our community.</p>
+
+        <p>Best regards,</p>
     </div>
 
     <!-- Bootstrap JS and Popper.js -->
