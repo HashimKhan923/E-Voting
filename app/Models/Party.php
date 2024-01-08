@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Party extends Model
 {
     use HasFactory;
+
+
+    public function votes()
+    {
+        return $this->hasMany(Vote::class,'party_id');
+    }
 }
