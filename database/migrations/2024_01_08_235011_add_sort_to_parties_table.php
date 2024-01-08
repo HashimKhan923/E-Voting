@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('parties', function (Blueprint $table) {
-            //
+            $table->integer('sort')->nullable();
+
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('parties', function (Blueprint $table) {
-            //
+            $table->integer('sort');
+
         });
     }
 };
