@@ -8,6 +8,7 @@ use App\Models\Party;
 use App\Models\Banner;
 use App\Models\Vote;
 use App\Models\HomeYoutubeGallery;
+use App\Models\YoutubeGallery;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,8 @@ class HomeController extends Controller
         $Banners = Banner::all();
         $Votes = Vote::all();
         $HomeYoutubeGallery = HomeYoutubeGallery::all();
+        $YoutubeGallery = YoutubeGallery::all();
 
-        return response()->json(['Parties'=>$Parties,'Banners'=>$Banners,'Votes'=>$Votes,'HomeYoutubeGallery',$HomeYoutubeGallery]);
+        return response()->json(['Parties'=>$Parties,'Banners'=>$Banners,'Votes'=>$Votes,'HomeYoutubeGallery'=>$HomeYoutubeGallery,'YoutubeGallery'=>$YoutubeGallery]);
     }
 }
