@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You for registration</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    
     <style>
         /* Add your custom styles here */
         body {
@@ -17,7 +13,7 @@
         
         .container {
             max-width: 600px;
-            margin: 20px auto;
+            margin: 20px;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -39,12 +35,18 @@
             border-radius: 4px;
             font-size: 1.5em;
             text-align: center;
+        }
+
+        .copy-button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
             cursor: pointer;
         }
 
-        h1, p {
-            text-align: center;
-        }
+
     </style>
 </head>
 <body>
@@ -55,26 +57,10 @@
         <b>Dear {{$name}},</b>
         <p>Thanks for registration.</p>
 
-        <b>your verification token: <h2 class="otp-box" title="click to copy" id="verificationToken" onclick="copyToClipboard('{{ $token }}')">{{ $token }}</h2></b>
+        <b>your verification token: <span class="otp-box" id="verificationToken">{{ $token }}</span></b>
     </div>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <!-- Clipboard.js -->
-    <script>
-        function copyToClipboard(text) {
-            var textArea = document.createElement("textarea");
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            alert('Verification token copied to clipboard!');
-        }
-    </script>
+    <!-- No JavaScript needed for this solution -->
 
 </body>
 </html>
