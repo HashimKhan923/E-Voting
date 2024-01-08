@@ -18,8 +18,13 @@ class PartyController extends Controller
     public function create(Request $request)
     {
         $new = new Party();
+
+        $count = Party::count();
+        $order = $count+1;
+
         $new->name = $request->name;
         $new->candidate_name = $request->candidate_name;
+        $new->sort = $order;
         if($request->file('flag'))
         {
             $file= $request->flag;
@@ -59,9 +64,20 @@ class PartyController extends Controller
     public function update(Request $request)
     {
         $update = Party::where('id',$request->id)->first();
+
+
+        if($request->order != null)
+        {
+            $changeOrder = Party::where('sort',$request->sort)->first();
+            $changeOrder->sort = $update->sort;
+            $changeOrder->save();
+        }
+
+
         $update->name = $request->name;
         $update->flag = $request->flag;
         $update->candidate_name = $request->candidate_name;
+        $update->sort = $request->sort;
         if($request->file('flag'))
         {
             // if($update->flag)
