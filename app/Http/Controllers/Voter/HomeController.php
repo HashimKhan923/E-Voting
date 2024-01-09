@@ -14,11 +14,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $Parties = Party::where('is_active',1)->get();
-        $Banners = Banner::all();
+        $Parties = Party::where('is_active',1)->orderBy('sort','ASC')->get();
+        $Banners = Banner::orderBy('sort','ASC')->get();
         $Votes = Vote::all();
         $HomeYoutubeGallery = HomeYoutubeGallery::all();
-        $YoutubeGallery = YoutubeGallery::all();
+        $YoutubeGallery = YoutubeGallery::orderBy('sort','ASC')->get();
 
         return response()->json(['Parties'=>$Parties,'Banners'=>$Banners,'Votes'=>$Votes,'HomeYoutubeGallery'=>$HomeYoutubeGallery,'YoutubeGallery'=>$YoutubeGallery]);
     }
