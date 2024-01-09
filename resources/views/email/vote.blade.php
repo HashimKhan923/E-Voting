@@ -17,7 +17,7 @@
         
         .container {
             max-width: 600px;
-            margin: 20px auto;
+            margin: 20px ;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -30,9 +30,7 @@
             margin-bottom: 20px;
         }
 
-        h1, p {
-            text-align: center;
-        }
+
     </style>
 </head>
 <body>
