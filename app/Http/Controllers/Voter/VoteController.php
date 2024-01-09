@@ -31,7 +31,7 @@ class VoteController extends Controller
             [
                 
                 'name'=>$user->name,
-                //'last_name'=>$query->last_name
+                'ballet_number'=>$user->uu_id
             ], 
         
         function ($message) use ($user) {
