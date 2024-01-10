@@ -19,10 +19,23 @@ class HomeYoutubeGalleryController extends Controller
     public function create(Request $request)
     {
         $new = new HomeYoutubeGallery();
+        $new->heading = $request->heading;
+        $new->description = $request->description;
         $new->link = $request->link;
         $new->save();
 
         return response()->json(['message'=>'created successfully!']);
+    }
+
+    public function update(Request $request)
+    {
+        $update = HomeYoutubeGallery::where('id',$request->id)->first();
+        $update->heading = $request->heading;
+        $update->description = $request->description;
+        $update->link = $request->link;
+        $update->save();
+
+        return response()->json(['message'=>'updated successfully!']);
     }
 
     public function delete($id)
