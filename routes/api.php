@@ -153,6 +153,7 @@ Route::group(['middleware' => ['auth:api']], function(){
             Route::controller(App\Http\Controllers\Admin\HomeYoutubeGalleryController::class)->group(function () {
                 Route::get('show','index');
                 Route::post('create','create');
+                Route::post('update','update');
                 Route::get('delete/{id}','delete');
             });
         });
