@@ -13,7 +13,7 @@ class VoterController extends Controller
         $data = User::with(['vote.party' => function ($query) {
             $query->select('id','name');
         }])
-        ->where('user_type', 'voter')
+        ->where('user_type','!=','admin')
         ->get();
         return response()->json(['data'=>$data]);
     }
@@ -35,6 +35,15 @@ class VoterController extends Controller
 
         return response()->json(['message'=>'status changed successfully!',200]);
 
+    }
+
+    public function change_type(Request $request)
+    {
+        $type = User::find($id);
+        $type->user_type = $request->user_type;
+        $type->save();
+
+        return response()->json(['message'=>'user type changed successfully!',200]);
     }
 
     public function delete($id)

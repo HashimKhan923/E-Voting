@@ -86,26 +86,11 @@ Route::group(['middleware' => ['auth:api']], function(){
 
             
 
-    Route::middleware(['admin'])->group(function () {
+    Route::middleware(['editor'])->group(function () {
 
 
 
-                                        // Dashboard
 
-        Route::group(['prefix' => '/admin/dashboard'], function() {
-            Route::controller(App\Http\Controllers\Admin\DashboardController::class)->group(function () {
-                Route::get('','index');
-            });
-        });
-
-
-                                // Vote
-
-        Route::group(['prefix' => '/admin/vote'], function() {
-            Route::controller(App\Http\Controllers\Admin\VoteController::class)->group(function () {
-                Route::get('show','index');
-            });
-        });
 
                         // Party
 
@@ -118,22 +103,6 @@ Route::group(['middleware' => ['auth:api']], function(){
                 Route::get('status/{id}','status');
             });
         });
-
-
-
-                                // Voters
-
-        Route::group(['prefix' => '/admin/voter'], function() {
-            Route::controller(App\Http\Controllers\Admin\VoterController::class)->group(function () {
-                Route::get('show','index');
-                Route::get('delete/{id}','delete');
-                Route::get('status/{id}','status');
-            });
-        });
-
-
-
-
 
 
 
@@ -158,6 +127,42 @@ Route::group(['middleware' => ['auth:api']], function(){
                 Route::get('delete/{id}','delete');
             });
         });
+
+
+
+        Route::middleware(['admin'])->group(function () {
+
+
+
+                // Dashboard
+
+                Route::group(['prefix' => '/admin/dashboard'], function() {
+                    Route::controller(App\Http\Controllers\Admin\DashboardController::class)->group(function () {
+                        Route::get('','index');
+                    });
+                });
+        
+        
+                                        // Vote
+        
+                Route::group(['prefix' => '/admin/vote'], function() {
+                    Route::controller(App\Http\Controllers\Admin\VoteController::class)->group(function () {
+                        Route::get('show','index');
+                    });
+                });
+        
+                                                // Voters
+        
+                Route::group(['prefix' => '/admin/voter'], function() {
+                    Route::controller(App\Http\Controllers\Admin\VoterController::class)->group(function () {
+                        Route::get('show','index');
+                        Route::post('type','change_type');
+                        Route::get('delete/{id}','delete');
+                        Route::get('status/{id}','status');
+                    });
+                });
+
+            });
 
     });
 });   
