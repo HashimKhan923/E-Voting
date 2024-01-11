@@ -55,9 +55,25 @@
         <!-- <img src="path/to/your/company-logo.png" alt="Company Logo"> -->
 
         <b>Dear {{$name}},</b>
-        <p>Thanks for registration.</p>
+        <p>Thank you for your Registration.</p>
 
-        <b>your verification token: <span class="otp-box" id="verificationToken">{{ $token }}</span></b>
+        <b>Your Verification Token Number: <span class="otp-box" id="verificationToken">{{ $token }}</span></b>
+
+        <h3>Follow the Instructions:</h3>
+
+        <ol>
+            <li>First, Sign up for the Account</li>
+            <li>Receive the OTP on your Registered email address.</li>
+            <li>Enter the OTP.</li>
+            <li>Sign in with Registered email and Password.</li>
+            <li>Select your Favorite Party.</li>
+            <li>Click the thumb Button, and a popup will appear; select Yes or No.</li>
+            <li>f you click Yes, your vote is cast.</li>
+            <li>After the vote is cast, you will receive an email.</li>
+        </ol>
+
+        <h5>Best Regards.</h5>
+
     </div>
 
     <!-- No JavaScript needed for this solution -->
