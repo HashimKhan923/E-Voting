@@ -56,7 +56,9 @@
 <p>Once again, thank you for taking the time to cast your vote. Your engagement is vital to the success and growth of our community.</p>
 
 
-        <p>Best regards,</p>
+        <p>Best regards ,</p>
+        <p>Overseas Pakistani Team</p>
+
     </div>
 
     <!-- Bootstrap JS and Popper.js -->

@@ -112,9 +112,7 @@ class AuthController extends Controller
                 $users =User::find($request->id);
                 $users->password = bcrypt($request->new_password);
                 $users->save();
-                //User::where( 'id' , auth::guard('user')->user()->id)->update( array( 'password' =>  $users->password));
-                //$request->session()->put('alert', 'success');
-                //$request->session()->put('change_passo', 'success');
+
                 $response = ['status'=>true,"message" => "Password Changed Successfully"];
                 return response($response, 200);
             }else{
