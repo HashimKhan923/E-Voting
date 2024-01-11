@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/forgetPassword', '\App\Http\Controllers\AuthController@forgetpassword');
 Route::post('/checktoken', '\App\Http\Controllers\AuthController@token_check');
 Route::post('/resetPassword', '\App\Http\Controllers\AuthController@reset_password');
+Route::post('/change_password', '\App\Http\Controllers\AuthController@passwordChange');
 Route::get('/verification/{id}', '\App\Http\Controllers\AuthController@verification');
 
 
