@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Party;
 use App\Models\Vote;
+use App\Models\Banner;
+use App\Models\YoutubeGallery;
 
 class DashboardController extends Controller
 {
@@ -15,8 +17,11 @@ class DashboardController extends Controller
         $Voters = User::where('user_type','voter')->count();
         $Vote = Vote::count();
         $Parties = Party::count();
+        $BannersCount = Banner::count();
+        $YoutubeGalleryCount = YoutubeGallery::count();
 
 
-        return response()->json(['VotersCount'=>$Voters,'VoteCount'=>$Vote,'PartiesCount'=>$Parties]);
+        return response()->json(['VotersCount'=>$Voters,'VoteCount'=>$Vote,'PartiesCount'=>$Parties
+        ,'BannersCount'=>$BannersCount,'YoutubeGalleryCount'=>$YoutubeGalleryCount]);
     }
 }
