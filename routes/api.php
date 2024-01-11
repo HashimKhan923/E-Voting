@@ -89,7 +89,13 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::middleware(['editor'])->group(function () {
 
 
+                        // Dashboard
 
+        Route::group(['prefix' => '/admin/dashboard'], function() {
+            Route::controller(App\Http\Controllers\Admin\DashboardController::class)->group(function () {
+                Route::get('','index');
+            });
+        });
 
 
                         // Party
@@ -134,13 +140,7 @@ Route::group(['middleware' => ['auth:api']], function(){
 
 
 
-                // Dashboard
 
-                Route::group(['prefix' => '/admin/dashboard'], function() {
-                    Route::controller(App\Http\Controllers\Admin\DashboardController::class)->group(function () {
-                        Route::get('','index');
-                    });
-                });
         
         
                                         // Vote
