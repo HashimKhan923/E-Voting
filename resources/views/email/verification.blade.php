@@ -59,17 +59,17 @@
 
         <b>Your Verification Token Number: <span class="otp-box" id="verificationToken">{{ $token }}</span></b>
 
-        <h3>Follow the Instructions:</h3>
+        <h3>Voting Instructions:</h3>
 
         <ol>
-            <li>First, Sign up for the Account</li>
-            <li>Receive the OTP on your Registered email address.</li>
-            <li>Enter the OTP.</li>
-            <li>Sign in with Registered email and Password.</li>
-            <li>Select your Favorite Party.</li>
-            <li>Click the thumb Button, and a popup will appear; select Yes or No.</li>
-            <li>f you click Yes, your vote is cast.</li>
-            <li>After the vote is cast, you will receive an email.</li>
+            <li>Begin by registering for an account.</li>
+            <li>Upon registration, an OTP will be sent to your designated email address.</li>
+            <li>Enter the OTP to verify your identity.</li>
+            <li>Sign in using your registered email and password.</li>
+            <li>Choose your preferred political party.</li>
+            <li>Click the thumb button, triggering a popup where you can select either Yes or No.</li>
+            <li>If you choose Yes, your vote will be successfully cast.</li>
+            <li>Following the completion of your vote, you will receive a confirmation email.</li>
         </ol>
 
         <h5>Best Regards.</h5>
